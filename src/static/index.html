@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CyberTrace — AI-Powered Email Threat Detection & Digital Forensic Platform</title>
-  <meta name="description" content="Court-admissible email forensics, Zero Hash Drift verification, adversarial de-obfuscation, and Section 63 BSA 2023 legal evidence packaging for Smart India Hackathon 2026.">
+  <title>CyberTrace — Email Threat Investigation Dashboard</title>
+  <meta name="description" content="Investigate suspicious emails, verify file integrity, and generate legal-ready evidence reports from one professional dashboard.">
   <link rel="stylesheet" href="/static/css/style.css">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
 </head>
@@ -17,16 +17,16 @@
         <div class="brand-logo">🛡️</div>
         <div class="brand-title">
           <h1>CYBERTRACE</h1>
-          <p>Forensic Threat Intelligence & Digital Evidence Platform // SIH 2026</p>
+          <p>Email Investigation & Digital Evidence Workspace</p>
         </div>
       </div>
       <div class="header-status">
         <div class="status-pill">
           <div class="status-dot"></div>
-          <span>ZERO HASH DRIFT: ACTIVE</span>
+          <span>Integrity monitoring active</span>
         </div>
         <div class="status-pill" style="background: rgba(99, 102, 241, 0.1); border-color: rgba(99, 102, 241, 0.3); color: #818cf8;">
-          <span>SEC 63 BSA 2023 COMPLIANT</span>
+          <span>Section 63 BSA 2023 ready</span>
         </div>
       </div>
     </header>
@@ -34,17 +34,17 @@
     <!-- Quick Scenarios -->
     <section class="scenarios-card">
       <div class="scenarios-label">
-        <span>⚡ <b>Instant Demonstration Scenarios:</b></span>
+        <span>⚡ <b>Quick sample investigations:</b></span>
       </div>
       <div class="scenarios-btns">
         <button id="btn-demo-clean" class="btn-demo btn-demo-clean">
-          <span>✅</span> 1. Clean Corporate Email
+          <span>✅</span> 1. Legitimate internal email
         </button>
         <button id="btn-demo-phish" class="btn-demo btn-demo-phish">
-          <span>🚨</span> 2. Spoofed BEC & Zero-Width Phish
+          <span>🚨</span> 2. Business email compromise attempt
         </button>
         <button id="btn-demo-quish" class="btn-demo btn-demo-quish">
-          <span>📱</span> 3. Multimodal QR Quishing Attack
+          <span>📱</span> 3. QR phishing attack sample
         </button>
       </div>
     </section>
@@ -53,14 +53,14 @@
     <section class="dropzone-container">
       <div id="dropzone" class="dropzone">
         <div class="dropzone-icon">📥</div>
-        <div class="dropzone-title">Drag & Drop Suspicious .EML Email File</div>
-        <div class="dropzone-subtitle">or click to browse your workstation • Immediate SHA-256 cryptographic sealing before parsing</div>
+        <div class="dropzone-title">Drop a suspicious .eml file to start analysis</div>
+        <div class="dropzone-subtitle">Or click to browse your system. We create a SHA-256 evidence hash before parsing.</div>
         <div class="dropzone-badges">
-          <span class="badge-tag">RFC 5322 MIME</span>
-          <span class="badge-tag">Pyzbar QR CV</span>
-          <span class="badge-tag">Zero-Width Uncloaking</span>
-          <span class="badge-tag">32-d Attack DNA</span>
-          <span class="badge-tag">Section 63 BSA Dossier</span>
+          <span class="badge-tag">MIME parsing</span>
+          <span class="badge-tag">Header authentication checks</span>
+          <span class="badge-tag">Obfuscation detection</span>
+          <span class="badge-tag">QR payload extraction</span>
+          <span class="badge-tag">Evidence package export</span>
         </div>
         <input type="file" id="file-input" accept=".eml" style="display: none;">
       </div>
@@ -98,8 +98,8 @@
       <!-- 2. Mathematical 8-Component Formula Breakdown -->
       <div class="card col-8">
         <div class="card-title">
-          <h3><span>⚖️</span> 8-Component Mathematical Risk Formula</h3>
-          <span class="badge-counter">Linear Weights = 1.00</span>
+          <h3><span>⚖️</span> Risk factor breakdown</h3>
+          <span class="badge-counter">8 weighted components</span>
         </div>
         <div id="component-bars">
           <!-- Populated by JS -->
@@ -109,8 +109,8 @@
       <!-- 3. Cryptographic Chain of Custody & Hash Integrity -->
       <div class="card col-6">
         <div class="card-title">
-          <h3><span>🔒</span> Cryptographic Chain of Custody</h3>
-          <span class="badge-counter">Preservation Before Parsing</span>
+          <h3><span>🔒</span> Chain of custody</h3>
+          <span class="badge-counter">Preserved before parsing</span>
         </div>
         <div class="meta-grid">
           <div class="meta-item">
@@ -122,7 +122,7 @@
             <div id="meta-timestamp" class="value mono">N/A</div>
           </div>
           <div class="meta-item" style="grid-column: span 2;">
-            <div class="label">SHA-256 Digest (Zero Hash Drift Verified)</div>
+            <div class="label">SHA-256 digest</div>
             <div id="meta-sha256" class="value mono" style="font-size: 11px;">N/A</div>
           </div>
           <div class="meta-item">
@@ -136,7 +136,7 @@
         </div>
         <div style="margin-top: 16px;">
           <button id="btn-verify-integrity" class="btn-download btn-verify" style="width: 100%;">
-            <span>🔍</span> Re-Verify SHA-256 Hash Integrity (Zero Hash Drift Proof)
+            <span>🔍</span> Re-verify SHA-256 file integrity
           </button>
         </div>
       </div>
@@ -144,8 +144,8 @@
       <!-- 4. Protocol Authentication & Egress Infrastructure -->
       <div class="card col-6">
         <div class="card-title">
-          <h3><span>📡</span> Protocol Authentication & Network Origin</h3>
-          <span class="badge-counter">Truth in Attribution</span>
+          <h3><span>📡</span> Authentication and network origin</h3>
+          <span class="badge-counter">Message routing view</span>
         </div>
         <div style="display: flex; gap: 10px; margin-bottom: 16px;">
           <div class="meta-item" style="flex: 1; text-align: center;">
@@ -162,7 +162,7 @@
           </div>
         </div>
         <div style="font-size: 12px; color: var(--text-secondary); margin-bottom: 8px;">
-          <b>Received Hop Pathway</b> (Bottom-to-Top Chronological Transit):
+          <b>Received hop pathway</b> (bottom-to-top chronology):
         </div>
         <div id="hop-timeline" class="hop-timeline">
           <!-- Populated by JS -->
@@ -172,8 +172,8 @@
       <!-- 5. Adversarial De-Obfuscation Inspector -->
       <div class="card col-6">
         <div class="card-title">
-          <h3><span>👁️</span> Adversarial De-Obfuscation Inspector</h3>
-          <span class="badge-counter">MIME & DOM Reconstruction</span>
+          <h3><span>👁️</span> De-obfuscation findings</h3>
+          <span class="badge-counter">Rendered content checks</span>
         </div>
         <div id="obfuscation-list" class="obfuscation-list">
           <!-- Populated by JS -->
@@ -183,8 +183,8 @@
       <!-- 6. Multimodal QR Quishing Forensics -->
       <div class="card col-6">
         <div class="card-title">
-          <h3><span>📷</span> Multimodal QR Quishing Computer Vision</h3>
-          <span class="badge-counter">In-Memory Decoding</span>
+          <h3><span>📷</span> QR phishing analysis</h3>
+          <span class="badge-counter">Attachment + inline scan</span>
         </div>
         <div id="qr-details">
           <!-- Populated by JS -->
@@ -194,8 +194,8 @@
       <!-- 7. Attack DNA Vector & Campaign Congruence -->
       <div class="card col-6">
         <div class="card-title">
-          <h3><span>🧬</span> 32-d Attack DNA & Campaign Congruence</h3>
-          <span class="badge-counter">Cosine Similarity &ge; 0.70</span>
+          <h3><span>🧬</span> Campaign similarity</h3>
+          <span class="badge-counter">Historical case comparison</span>
         </div>
         <div id="campaign-matches">
           <!-- Populated by JS -->
@@ -205,8 +205,8 @@
       <!-- 8. Programmatic Grounded Storytelling -->
       <div class="card col-6">
         <div class="card-title">
-          <h3><span>📜</span> Citation-Constrained Incident Story</h3>
-          <span class="badge-counter">Zero-Hallucination [F-XXX]</span>
+          <h3><span>📜</span> Evidence-backed incident summary</h3>
+          <span class="badge-counter">Mapped to extracted findings</span>
         </div>
         <div id="story-steps" class="story-steps">
           <!-- Populated by JS -->
@@ -214,22 +214,21 @@
       </div>
 
       <!-- 9. Court-Admissible Dossier Export Card -->
-      <div class="card col-12" style="background: linear-gradient(135deg, rgba(30, 58, 138, 0.25), rgba(15, 23, 42, 0.8)); border-color: rgba(56, 189, 248, 0.3);">
+      <div class="card col-12" style="background: linear-gradient(135deg, rgba(37, 99, 235, 0.16), rgba(15, 23, 42, 0.85)); border-color: rgba(96, 165, 250, 0.28);">
         <div class="card-title">
-          <h3><span>⚖️</span> Section 63 BSA 2023 Digital Evidence Packaging</h3>
-          <span class="badge-counter">Court Admissible Legal Dossier</span>
+          <h3><span>⚖️</span> Legal evidence export</h3>
+          <span class="badge-counter">Section 63 BSA 2023 package</span>
         </div>
         <p style="font-size: 13px; color: var(--text-secondary); max-width: 900px;">
-          Generate tamper-evident evidence packages pre-filled with Section 63 of the Bharatiya Sakshya Adhiniyam, 2023 
-          (erstwhile Section 65B of the Indian Evidence Act, 1872) technical certificates, raw untouched byte streams, 
-          and firewall-ready IoC CSV blocklists.
+          Export tamper-evident documentation with technical certificate data, preserved evidence artifacts, and IOC files
+          that can be used for legal and incident-response workflows.
         </p>
         <div class="download-actions">
           <a id="link-pdf" href="#" class="btn-download btn-pdf" download>
-            <span>📄</span> Download Section 63 BSA Audit Report (PDF)
+            <span>📄</span> Download forensic report (PDF)
           </a>
           <a id="link-zip" href="#" class="btn-download btn-zip" download>
-            <span>📦</span> Download Sealed Evidence Bundle (ZIP)
+            <span>📦</span> Download evidence bundle (ZIP)
           </a>
         </div>
       </div>
