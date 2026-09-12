@@ -99,33 +99,81 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
-### Launch the REST API
+### Launch the Platform & Interactive Dashboard
 ```powershell
 uvicorn src.api.app:app --host 127.0.0.1 --port 8000 --reload
 ```
-Interactive Swagger API documentation will be available at: `http://127.0.0.1:8000/docs`.
+- **Web Investigation Dashboard**: Open your browser at [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
+- **Interactive Swagger API Docs**: Open [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)
 
 ### Run the Automated Test Harness
 ```powershell
 pytest -v
 ```
-All **17 tests pass with 0 failures** across the 9 forensic modules, the REST API, and adversarial stress tests in under **1.5 seconds**.
+All **18 tests pass with 100% success rate** across the 9 forensic modules, the REST API, and adversarial stress tests in under **1.3 seconds**.
 
 ---
 
-## 4. API Endpoints Reference
+## 4. Where to Get Datasets & Sample Emails
+
+CyberTrace processes raw RFC 822 / MIME emails (`.eml` format). You can obtain test emails and forensic datasets through any of the following sources:
+
+### A. Built-in Test Samples (Ready Immediately)
+The repository includes synthetic adversarial and benign emails in the [`samples/`](./samples/) folder:
+* [`samples/clean_corporate.eml`](./samples/clean_corporate.eml): Benign IT infrastructure notice with valid SPF/DKIM/DMARC.
+* [`samples/spoofed_phishing.eml`](./samples/spoofed_phishing.eml): Brand spoofing, zero-width characters (`U+200B`), CSS hidden DOM (`display:none`), and Reply-To mismatch.
+* [`samples/quishing_mfa.eml`](./samples/quishing_mfa.eml): Microsoft 365 MFA lure with embedded QR code pointing to a credential harvesting gateway.
+
+To regenerate or create new samples at any time:
+```powershell
+python scripts/generate_samples.py
+```
+You can drag-and-drop these files directly into the web dashboard or upload them via the `/cases` API endpoint.
+
+### B. Public Academic & Forensic Datasets
+For benchmarking against thousands of real-world threats and legitimate corporate baselines:
+
+1. **Nazario Phishing Corpus (Jose Nazario)**
+   * *Description*: The industry standard research collection of thousands of real-world phishing emails in raw `.eml`/`.mbox` format.
+   * *Access*: [monkey.org/~jose/phishing/](https://monkey.org/~jose/phishing/) or through academic security repositories.
+2. **Apache SpamAssassin Public Corpus**
+   * *Description*: Curated archive of thousands of raw emails categorized into `easy_ham`, `hard_ham`, and `spam`.
+   * *Access*: [https://spamassassin.apache.org/old/publiccorpus/](https://spamassassin.apache.org/old/publiccorpus/)
+3. **Enron Email Dataset (CMU)**
+   * *Description*: Gold-standard dataset of ~500,000 real-world corporate enterprise emails, ideal for establishing baseline false-positive rates.
+   * *Access*: [https://www.cs.cmu.edu/~enron/](https://www.cs.cmu.edu/~enron/) or via Kaggle.
+4. **TREC Spam Track Corpus**
+   * *Description*: Text REtrieval Conference (TREC 2005-2007) public email evaluation sets with verified ground truth labels.
+   * *Access*: [https://trec.nist.gov/data/spam.html](https://trec.nist.gov/data/spam.html)
+5. **Kaggle Email & Phishing Datasets**
+   * *Description*: Modern curated collections containing 80,000+ labeled phishing and ham emails.
+   * *Access*: Search "Phishing Email Dataset" on [Kaggle](https://www.kaggle.com/).
+
+### C. Exporting Emails from Your Own Mail Client
+You can investigate any real email by exporting it as `.eml`:
+* **Google Gmail**: Open the email $\rightarrow$ click the three dots icon (More) $\rightarrow$ select **"Download message"** (saves as `.eml`).
+* **Microsoft Outlook (Desktop)**: Open the email $\rightarrow$ click **File** $\rightarrow$ **Save As** $\rightarrow$ select **Outlook Message Format (*.eml)**, or simply drag the message onto your desktop.
+* **Mozilla Thunderbird**: Right-click the email $\rightarrow$ select **"Save As..."** $\rightarrow$ save as `.eml`.
+* **Apple Mail**: Select the email $\rightarrow$ click **File** $\rightarrow$ **Save As...** $\rightarrow$ choose **Raw Message Source** (`.eml`).
+
+---
+
+## 5. API Endpoints Reference
 
 | Method | Endpoint | Description |
 |---|---|---|
+| `GET` | `/` | Serves the interactive CyberTrace forensic investigation dashboard. |
 | `POST` | `/cases` | Ingests `.eml` multipart upload, seals hash, executes 9 modules, returns `EvidenceObject`. |
 | `GET` | `/cases/{id}` | Retrieves stored forensic `EvidenceObject` JSON. |
 | `POST` | `/cases/{id}/verify` | Cryptographic SHA-256 integrity re-check proving Zero Hash Drift under Section 63 BSA. |
 | `GET` | `/cases/{id}/report.pdf` | Downloads court-admissible ReportLab PDF forensic report with legal certificate. |
 | `GET` | `/cases/{id}/evidence.zip` | Downloads complete tamper-evident Section 63 BSA ZIP bundle. |
+| `GET` | `/cases/demo/{type}` | Instant execution of synthetic scenarios (`clean`, `phishing`, `quishing`). |
 | `GET` | `/health` | Service health status check. |
 
 ---
 
-## 5. Architectural & Build Logs
+## 6. Architectural & Build Logs
 
 For complete engineering logs, OOP/SOLID architectural notes, and verification records, consult [`CHANGELOG.md`](./CHANGELOG.md) and [`ARCHITECTURE_DECISION_RECORDS_ADR.md`](./ARCHITECTURE_DECISION_RECORDS_ADR.md).
+

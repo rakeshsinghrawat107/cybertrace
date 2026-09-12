@@ -92,5 +92,19 @@ This log is maintained autonomously by the Principal Systems Architect to track 
 
 ---
 
+## [2026-09-12 11:38 UTC+05:30] Phase 8: Dataset Provisioning, Sample EML Tooling & Research Reference
 
+### 1. Architectural Decisions & Tooling
+- **Reproducible Test Data Pipeline:**
+  - Automated `.eml` artifact generation via `scripts/generate_samples.py` utilizing the synthetic fixture generators.
+  - Provided immediately accessible, pre-built test samples in `samples/` (`clean_corporate.eml`, `spoofed_phishing.eml`, `quishing_mfa.eml`) for zero-friction drag-and-drop testing.
+- **Forensic Dataset Reference Documentation:**
+  - Documented top public academic and industry forensic datasets (Nazario Phishing Corpus, Apache SpamAssassin, Enron Email Dataset, TREC Spam Track, Kaggle) in `README.md`.
+  - Added export procedures for standard enterprise email clients (Gmail, Outlook, Thunderbird, Apple Mail).
 
+### 2. Implemented Components
+- `scripts/generate_samples.py`: CLI generator script for creating test `.eml` files.
+- `samples/clean_corporate.eml`: Benign enterprise email sample.
+- `samples/spoofed_phishing.eml`: Adversarially obfuscated phishing sample.
+- `samples/quishing_mfa.eml`: Multimodal QR code quishing sample.
+- `README.md`: Updated with comprehensive datasets section and updated API references.

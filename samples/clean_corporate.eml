@@ -1,0 +1,22 @@
+From: Internal IT Support <support@acme-corp.com>
+To: employee@acme-corp.com
+Subject: Quarterly IT Infrastructure Maintenance Schedule
+Date: Thu, 10 Sep 2026 14:00:00 +0000
+Message-ID: <20260910140000.12345.it@acme-corp.com>
+Received: from mail-relay.acme-corp.com ([198.51.100.25]) by mx.acme-corp.com
+ with ESMTPS id abc12345; Wed, 10 Sep 2026 14:00:01 +0000
+Authentication-Results: mx.acme-corp.com; dkim=pass header.i=@acme-corp.com;
+ spf=pass smtp.mailfrom=support@acme-corp.com; dmarc=pass
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+Hello Team,
+
+Please be advised that the internal portal will undergo scheduled maintenance=
+ this Saturday.
+No action is required from your side.
+
+Best regards,
+IT Infrastructure Operations
+https://portal.acme-corp.com/status
