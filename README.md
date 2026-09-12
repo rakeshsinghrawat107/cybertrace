@@ -114,23 +114,11 @@ All **18 tests pass with 100% success rate** across the 9 forensic modules, the 
 
 ---
 
-## 4. Where to Get Datasets & Sample Emails
+## 4. Where to Get Real Datasets & Forensic Email Corpora
 
-CyberTrace processes raw RFC 822 / MIME emails (`.eml` format). You can obtain test emails and forensic datasets through any of the following sources:
+CyberTrace is production-ready to process any RFC 822 / MIME email (`.eml` format). You can benchmark or investigate emails from the following authoritative sources:
 
-### A. Built-in Test Samples (Ready Immediately)
-The repository includes synthetic adversarial and benign emails in the [`samples/`](./samples/) folder:
-* [`samples/clean_corporate.eml`](./samples/clean_corporate.eml): Benign IT infrastructure notice with valid SPF/DKIM/DMARC.
-* [`samples/spoofed_phishing.eml`](./samples/spoofed_phishing.eml): Brand spoofing, zero-width characters (`U+200B`), CSS hidden DOM (`display:none`), and Reply-To mismatch.
-* [`samples/quishing_mfa.eml`](./samples/quishing_mfa.eml): Microsoft 365 MFA lure with embedded QR code pointing to a credential harvesting gateway.
-
-To regenerate or create new samples at any time:
-```powershell
-python scripts/generate_samples.py
-```
-You can drag-and-drop these files directly into the web dashboard or upload them via the `/cases` API endpoint.
-
-### B. Public Academic & Forensic Datasets
+### A. Public Academic & Forensic Datasets
 For benchmarking against thousands of real-world threats and legitimate corporate baselines:
 
 1. **Nazario Phishing Corpus (Jose Nazario)**
@@ -149,7 +137,7 @@ For benchmarking against thousands of real-world threats and legitimate corporat
    * *Description*: Modern curated collections containing 80,000+ labeled phishing and ham emails.
    * *Access*: Search "Phishing Email Dataset" on [Kaggle](https://www.kaggle.com/).
 
-### C. Exporting Emails from Your Own Mail Client
+### B. Exporting Emails from Your Own Mail Client
 You can investigate any real email by exporting it as `.eml`:
 * **Google Gmail**: Open the email $\rightarrow$ click the three dots icon (More) $\rightarrow$ select **"Download message"** (saves as `.eml`).
 * **Microsoft Outlook (Desktop)**: Open the email $\rightarrow$ click **File** $\rightarrow$ **Save As** $\rightarrow$ select **Outlook Message Format (*.eml)**, or simply drag the message onto your desktop.

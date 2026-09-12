@@ -108,3 +108,20 @@ This log is maintained autonomously by the Principal Systems Architect to track 
 - `samples/spoofed_phishing.eml`: Adversarially obfuscated phishing sample.
 - `samples/quishing_mfa.eml`: Multimodal QR code quishing sample.
 - `README.md`: Updated with comprehensive datasets section and updated API references.
+
+---
+
+## [2026-09-12 13:26 UTC+05:30] Phase 9: Repository Hygiene & Dummy Dataset Purge
+
+### 1. Architectural Decisions
+- **Repository Cleanliness & Decoupling:**
+  - Removed on-disk dummy dataset files (`samples/`) and public corpus scratch directories (`data/public_corpus/`, `data/CT-2026-*`) in accordance with production cleanliness standards.
+  - Test suites remain 100% self-contained using automated fixtures in `tests/fixtures/` and in-memory streams.
+  - Zero clutter in repository: `data/` maintained in clean state with `.gitkeep`.
+
+### 2. Purged Components
+- Removed `samples/` directory (`clean_corporate.eml`, `spoofed_phishing.eml`, `quishing_mfa.eml`).
+- Removed temporary dataset helper scripts (`scripts/generate_samples.py`, `scripts/download_public_dataset.py`).
+- Cleaned runtime forensic case directories in `data/`.
+- Updated `README.md` to reference pure academic/industry datasets and mail client export procedures.
+
