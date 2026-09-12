@@ -7,9 +7,9 @@ Received: from relay.ms-cloud-security.cc ([198.51.100.99]) by
  mx.enterprise.org with ESMTP; Fri, 12 Sep 2026 08:30:02 +0000
 Authentication-Results: mx.enterprise.org; spf=neutral; dkim=none; dmarc=none
 MIME-Version: 1.0
-Content-Type: multipart/mixed; boundary="===============7716202004169183970=="
+Content-Type: multipart/mixed; boundary="===============8696381156022484843=="
 
---===============7716202004169183970==
+--===============8696381156022484843==
 Content-Type: text/plain; charset="utf-8"
 Content-Transfer-Encoding: quoted-printable
 
@@ -22,7 +22,7 @@ ock your corporate inbox.
 Best regards,
 Corporate Cloud Security
 
---===============7716202004169183970==
+--===============8696381156022484843==
 Content-Type: image/png
 Content-Transfer-Encoding: base64
 Content-Disposition: attachment; filename="Security_MFA_QRCode.png"
@@ -43,4 +43,4 @@ rfmPxn9zfjqvV3PcRdqVsvW28SaWzefe/t787F1KYYIOgOpKLrUPHsLvai1/0PgfiW/Jge3k3xSK
 XgYI/FV9ORHUlXz3N7+Pxt9K/wpiVyN2neMwHS3Y/vsN9ydJgvw49E+3K7fmPxo/CUybX2D8NHDB
 Pofx08AF+xzGTwMX7HMYP41Pz88fOpP4EHp/w9gAAAAASUVORK5CYII=
 
---===============7716202004169183970==--
+--===============8696381156022484843==--
