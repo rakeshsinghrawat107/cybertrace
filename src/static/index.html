@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CyberTrace — AI-Powered Email Threat Detection & Digital Forensic Platform</title>
+  <meta name="description" content="Court-admissible email forensics, Zero Hash Drift verification, adversarial de-obfuscation, and Section 63 BSA 2023 legal evidence packaging for Smart India Hackathon 2026.">
+  <link rel="stylesheet" href="/static/css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛡️</text></svg>">
+</head>
+<body>
+
+  <div class="container">
+    <!-- Header -->
+    <header class="app-header">
+      <div class="brand-section">
+        <div class="brand-logo">🛡️</div>
+        <div class="brand-title">
+          <h1>CYBERTRACE</h1>
+          <p>Forensic Threat Intelligence & Digital Evidence Platform // SIH 2026</p>
+        </div>
+      </div>
+      <div class="header-status">
+        <div class="status-pill">
+          <div class="status-dot"></div>
+          <span>ZERO HASH DRIFT: ACTIVE</span>
+        </div>
+        <div class="status-pill" style="background: rgba(99, 102, 241, 0.1); border-color: rgba(99, 102, 241, 0.3); color: #818cf8;">
+          <span>SEC 63 BSA 2023 COMPLIANT</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Quick Scenarios -->
+    <section class="scenarios-card">
+      <div class="scenarios-label">
+        <span>⚡ <b>Instant Demonstration Scenarios:</b></span>
+      </div>
+      <div class="scenarios-btns">
+        <button id="btn-demo-clean" class="btn-demo btn-demo-clean">
+          <span>✅</span> 1. Clean Corporate Email
+        </button>
+        <button id="btn-demo-phish" class="btn-demo btn-demo-phish">
+          <span>🚨</span> 2. Spoofed BEC & Zero-Width Phish
+        </button>
+        <button id="btn-demo-quish" class="btn-demo btn-demo-quish">
+          <span>📱</span> 3. Multimodal QR Quishing Attack
+        </button>
+      </div>
+    </section>
+
+    <!-- Upload Dropzone -->
+    <section class="dropzone-container">
+      <div id="dropzone" class="dropzone">
+        <div class="dropzone-icon">📥</div>
+        <div class="dropzone-title">Drag & Drop Suspicious .EML Email File</div>
+        <div class="dropzone-subtitle">or click to browse your workstation • Immediate SHA-256 cryptographic sealing before parsing</div>
+        <div class="dropzone-badges">
+          <span class="badge-tag">RFC 5322 MIME</span>
+          <span class="badge-tag">Pyzbar QR CV</span>
+          <span class="badge-tag">Zero-Width Uncloaking</span>
+          <span class="badge-tag">32-d Attack DNA</span>
+          <span class="badge-tag">Section 63 BSA Dossier</span>
+        </div>
+        <input type="file" id="file-input" accept=".eml" style="display: none;">
+      </div>
+      <div id="progress-bar" class="progress-bar-container">
+        <div id="progress-fill" class="progress-bar-fill"></div>
+      </div>
+    </section>
+
+    <!-- Forensic Intelligence HUD (Displayed on results) -->
+    <main id="results-grid" class="results-grid">
+
+      <!-- 1. Executive Threat Assessment -->
+      <div class="card col-4">
+        <div class="card-title">
+          <h3><span>🎯</span> Threat Assessment</h3>
+          <span id="threat-band-badge" class="threat-band-badge band-LOW">LOW</span>
+        </div>
+        <div class="threat-gauge-box">
+          <div class="gauge-circle">
+            <svg width="140" height="140" viewBox="0 0 140 140">
+              <circle class="circle-bg" cx="70" cy="70" r="58"></circle>
+              <circle id="gauge-bar" class="circle-bar" cx="70" cy="70" r="58"></circle>
+            </svg>
+            <div class="gauge-center-text">
+              <div id="risk-score-text" class="score-val">0.00</div>
+              <div class="score-max">OUT OF 1.00</div>
+            </div>
+          </div>
+        </div>
+        <div id="risk-rationale" class="rationale-text">
+          Awaiting forensic calculation...
+        </div>
+      </div>
+
+      <!-- 2. Mathematical 8-Component Formula Breakdown -->
+      <div class="card col-8">
+        <div class="card-title">
+          <h3><span>⚖️</span> 8-Component Mathematical Risk Formula</h3>
+          <span class="badge-counter">Linear Weights = 1.00</span>
+        </div>
+        <div id="component-bars">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- 3. Cryptographic Chain of Custody & Hash Integrity -->
+      <div class="card col-6">
+        <div class="card-title">
+          <h3><span>🔒</span> Cryptographic Chain of Custody</h3>
+          <span class="badge-counter">Preservation Before Parsing</span>
+        </div>
+        <div class="meta-grid">
+          <div class="meta-item">
+            <div class="label">Case Identification</div>
+            <div id="meta-case-id" class="value mono">N/A</div>
+          </div>
+          <div class="meta-item">
+            <div class="label">Intake Timestamp (UTC)</div>
+            <div id="meta-timestamp" class="value mono">N/A</div>
+          </div>
+          <div class="meta-item" style="grid-column: span 2;">
+            <div class="label">SHA-256 Digest (Zero Hash Drift Verified)</div>
+            <div id="meta-sha256" class="value mono" style="font-size: 11px;">N/A</div>
+          </div>
+          <div class="meta-item">
+            <div class="label">Original Filename</div>
+            <div id="meta-filename" class="value">N/A</div>
+          </div>
+          <div class="meta-item">
+            <div class="label">Network Byte Size</div>
+            <div id="meta-size" class="value mono">N/A</div>
+          </div>
+        </div>
+        <div style="margin-top: 16px;">
+          <button id="btn-verify-integrity" class="btn-download btn-verify" style="width: 100%;">
+            <span>🔍</span> Re-Verify SHA-256 Hash Integrity (Zero Hash Drift Proof)
+          </button>
+        </div>
+      </div>
+
+      <!-- 4. Protocol Authentication & Egress Infrastructure -->
+      <div class="card col-6">
+        <div class="card-title">
+          <h3><span>📡</span> Protocol Authentication & Network Origin</h3>
+          <span class="badge-counter">Truth in Attribution</span>
+        </div>
+        <div style="display: flex; gap: 10px; margin-bottom: 16px;">
+          <div class="meta-item" style="flex: 1; text-align: center;">
+            <div class="label">SPF</div>
+            <div id="auth-spf" class="value mono" style="color: #38bdf8;">PASS</div>
+          </div>
+          <div class="meta-item" style="flex: 1; text-align: center;">
+            <div class="label">DKIM</div>
+            <div id="auth-dkim" class="value mono" style="color: #38bdf8;">PASS</div>
+          </div>
+          <div class="meta-item" style="flex: 1; text-align: center;">
+            <div class="label">DMARC</div>
+            <div id="auth-dmarc" class="value mono" style="color: #38bdf8;">PASS</div>
+          </div>
+        </div>
+        <div style="font-size: 12px; color: var(--text-secondary); margin-bottom: 8px;">
+          <b>Received Hop Pathway</b> (Bottom-to-Top Chronological Transit):
+        </div>
+        <div id="hop-timeline" class="hop-timeline">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- 5. Adversarial De-Obfuscation Inspector -->
+      <div class="card col-6">
+        <div class="card-title">
+          <h3><span>👁️</span> Adversarial De-Obfuscation Inspector</h3>
+          <span class="badge-counter">MIME & DOM Reconstruction</span>
+        </div>
+        <div id="obfuscation-list" class="obfuscation-list">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- 6. Multimodal QR Quishing Forensics -->
+      <div class="card col-6">
+        <div class="card-title">
+          <h3><span>📷</span> Multimodal QR Quishing Computer Vision</h3>
+          <span class="badge-counter">In-Memory Decoding</span>
+        </div>
+        <div id="qr-details">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- 7. Attack DNA Vector & Campaign Congruence -->
+      <div class="card col-6">
+        <div class="card-title">
+          <h3><span>🧬</span> 32-d Attack DNA & Campaign Congruence</h3>
+          <span class="badge-counter">Cosine Similarity &ge; 0.70</span>
+        </div>
+        <div id="campaign-matches">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- 8. Programmatic Grounded Storytelling -->
+      <div class="card col-6">
+        <div class="card-title">
+          <h3><span>📜</span> Citation-Constrained Incident Story</h3>
+          <span class="badge-counter">Zero-Hallucination [F-XXX]</span>
+        </div>
+        <div id="story-steps" class="story-steps">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- 9. Court-Admissible Dossier Export Card -->
+      <div class="card col-12" style="background: linear-gradient(135deg, rgba(30, 58, 138, 0.25), rgba(15, 23, 42, 0.8)); border-color: rgba(56, 189, 248, 0.3);">
+        <div class="card-title">
+          <h3><span>⚖️</span> Section 63 BSA 2023 Digital Evidence Packaging</h3>
+          <span class="badge-counter">Court Admissible Legal Dossier</span>
+        </div>
+        <p style="font-size: 13px; color: var(--text-secondary); max-width: 900px;">
+          Generate tamper-evident evidence packages pre-filled with Section 63 of the Bharatiya Sakshya Adhiniyam, 2023 
+          (erstwhile Section 65B of the Indian Evidence Act, 1872) technical certificates, raw untouched byte streams, 
+          and firewall-ready IoC CSV blocklists.
+        </p>
+        <div class="download-actions">
+          <a id="link-pdf" href="#" class="btn-download btn-pdf" download>
+            <span>📄</span> Download Section 63 BSA Audit Report (PDF)
+          </a>
+          <a id="link-zip" href="#" class="btn-download btn-zip" download>
+            <span>📦</span> Download Sealed Evidence Bundle (ZIP)
+          </a>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>

@@ -10,8 +10,15 @@ from fastapi import FastAPI, File, HTTPException, UploadFile, status
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, JSONResponse
 
+from fastapi.staticfiles import StaticFiles
+
 from src.models.evidence_object import EvidenceObject
 from src.pipeline import ForensicPipeline
+from tests.fixtures.generate_synthetic_eml import (
+    create_clean_eml,
+    create_phishing_obfuscated_eml,
+    create_quishing_eml,
+)
 
 app = FastAPI(
     title="CyberTrace Forensic Intelligence API",
@@ -26,6 +33,10 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+STATIC_DIR = Path(__file__).parent.parent / "static"
+if STATIC_DIR.exists():
+    app.mount("/static", StaticFiles(directory=str(STATIC_DIR)), name="static")
 
 # Global in-memory cache for ultra-low latency case retrieval
 CASES_REGISTRY: Dict[str, EvidenceObject] = {}
@@ -51,10 +62,39 @@ def _load_case_from_disk(case_id: str) -> Optional[EvidenceObject]:
     return None
 
 
+@app.get("/", include_in_schema=False)
+async def serve_dashboard() -> FileResponse:
+    """Serves the interactive CyberTrace Forensic Investigation Dashboard."""
+    index_file = STATIC_DIR / "index.html"
+    if index_file.exists():
+        return FileResponse(str(index_file))
+    return JSONResponse({"message": "CyberTrace API online. Dashboard static files missing."})
+
+
 @app.get("/health", tags=["Health"])
 async def health_check() -> Dict[str, str]:
     """Health check endpoint."""
     return {"status": "healthy", "service": "CyberTrace", "version": "1.0.0"}
+
+
+@app.post("/cases/demo/{sample_type}", response_model=EvidenceObject, tags=["Forensics"])
+async def ingest_demo_sample(sample_type: str) -> EvidenceObject:
+    """Executes full forensic pipeline on pre-configured demonstration samples (clean, phishing, quishing)."""
+    if sample_type == "clean":
+        file_bytes = create_clean_eml()
+        filename = "demo_clean_corporate.eml"
+    elif sample_type == "phishing":
+        file_bytes = create_phishing_obfuscated_eml()
+        filename = "demo_spoofed_bec_obfuscated.eml"
+    elif sample_type == "quishing":
+        file_bytes = create_quishing_eml()
+        filename = "demo_multimodal_quishing.eml"
+    else:
+        raise HTTPException(status_code=400, detail="Invalid demo type. Choose 'clean', 'phishing', or 'quishing'.")
+        
+    evidence = pipeline.process(file_bytes, filename=filename, export_dossier=True)
+    CASES_REGISTRY[evidence.case_id] = evidence
+    return evidence
 
 
 @app.post("/cases", response_model=EvidenceObject, status_code=status.HTTP_201_CREATED, tags=["Forensics"])

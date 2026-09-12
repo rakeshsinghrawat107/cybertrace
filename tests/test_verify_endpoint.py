@@ -62,3 +62,24 @@ def test_api_case_lifecycle_and_verification(client, clean_eml_bytes):
         assert "report/CyberTrace_Forensic_Report.pdf" in namelist
         assert "data/evidence_object.json" in namelist
         assert "data/iocs.csv" in namelist
+
+
+def test_dashboard_and_demo_endpoints(client):
+    # Test root dashboard serves HTML
+    home_res = client.get("/")
+    assert home_res.status_code == 200
+    assert "text/html" in home_res.headers["content-type"]
+    assert "CYBERTRACE" in home_res.text
+    
+    # Test quick demo scenarios
+    clean_demo = client.post("/cases/demo/clean")
+    assert clean_demo.status_code == 200
+    assert clean_demo.json()["risk"]["band"] == "LOW"
+    
+    phish_demo = client.post("/cases/demo/phishing")
+    assert phish_demo.status_code == 200
+    assert phish_demo.json()["risk"]["score"] >= 0.65
+    
+    quish_demo = client.post("/cases/demo/quishing")
+    assert quish_demo.status_code == 200
+    assert len(quish_demo.json()["indicators"]["qr_payloads"]) >= 1

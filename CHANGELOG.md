@@ -68,4 +68,29 @@ This log is maintained autonomously by the Principal Systems Architect to track 
 
 ---
 
+## [2026-09-12 11:02 UTC+05:30] Phase 7: Interactive Investigation Portal & Web Dashboard
+
+### 1. Architectural Decisions & UI / UX Patterns Applied
+- **Unified Single-Server Architecture:**
+  - Integrated the forensic dashboard directly into the FastAPI ASGI service at `/` and `/static`, eliminating multi-port complexity and providing zero-friction execution.
+- **Modern Cyber-Forensics Visual Language:**
+  - Glassmorphic translucent cards (`backdrop-filter: blur(14px)`), neon cyan/crimson/emerald accents, Inter typography, and JetBrains Mono for cryptographic digests.
+- **Micro-Interactions & Real-Time Visualization:**
+  - Interactive SVG Threat Gauge meter dynamically rendering the [0.00–1.00] risk score and color-coded risk bands (`LOW`, `MEDIUM`, `HIGH`, `CRITICAL`).
+  - 8-Component Linear Formula bar charts attributing exact mathematical weight contributions.
+  - Chronological Received hop timeline with network infrastructure association disclosures.
+  - Live in-browser SHA-256 integrity verification modal for instant proof of Zero Hash Drift.
+- **One-Click Demonstration Triggers:**
+  - Integrated `/cases/demo/{clean|phishing|quishing}` endpoints enabling one-click live demonstrations without requiring manual `.eml` file searching.
+
+### 2. Implemented Components
+- `src/static/index.html`: Responsive HTML5 dashboard layout.
+- `src/static/css/style.css`: Dark-mode cyber-forensic design system and glassmorphism styles.
+- `src/static/js/app.js`: Drag-and-drop intake, async pipeline communication, and dynamic DOM rendering.
+- `src/api/app.py`: Mounted static files, added root `/` handler, and demo sample execution routes.
+- `tests/test_verify_endpoint.py`: Expanded test harness to 18 automated tests validating dashboard and demo routes (**18/18 passed in 1.78s**).
+
+---
+
+
 
