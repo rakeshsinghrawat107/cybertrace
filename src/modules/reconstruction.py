@@ -57,7 +57,10 @@ def _extract_hidden_dom_elements(html_content: str) -> Tuple[str, List[str]]:
         soup = BeautifulSoup(html_content, "html.parser")
         
     for tag in soup.find_all(True):
-        style = tag.get("style", "")
+        if not getattr(tag, "attrs", None):
+            continue
+        raw_style = tag.get("style", "")
+        style = " ".join(raw_style) if isinstance(raw_style, list) else (str(raw_style) if raw_style else "")
         if CSS_HIDDEN_PATTERN.search(style):
             text = tag.get_text(strip=True)
             if text:
