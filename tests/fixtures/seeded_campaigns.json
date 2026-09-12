@@ -1,0 +1,35 @@
+[
+  {
+    "campaign_id": "CAMP-2025-FINANCIAL-QUISH",
+    "name": "Global Quishing & Brand Spoofing Campaign",
+    "threat_actor": "UNC-9182",
+    "vector": [
+      0.15, 0.1, 0.2, 0.1, 0.3, 0.0, 0.0, 1.0, 0.0, 0.0,
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.2, 0.2, 0.0, 1.0,
+      0.0, 0.2, 0.0, 0.0, 0.5, 0.5, 0.5, 0.0, 0.0, 0.1,
+      0.8, 0.9
+    ]
+  },
+  {
+    "campaign_id": "CAMP-2025-BEC-WIRE",
+    "name": "Executive Impersonation & Wire Transfer Fraud",
+    "threat_actor": "FIN-772",
+    "vector": [
+      0.1, 0.1, 0.15, 0.08, 0.25, 0.0, 1.0, 0.8, 0.0, 0.0,
+      0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.05, 0.1, 0.0, 0.0,
+      0.0, 0.0, 0.0, 0.0, 0.7, 0.5, 1.0, 1.0, 1.0, 0.1,
+      0.6, 1.0
+    ]
+  },
+  {
+    "campaign_id": "CAMP-2025-OBFUSCATED-DOM",
+    "name": "Adversarial Unicode & CSS DOM Cloaking Operation",
+    "threat_actor": "TA-505-EVADE",
+    "vector": [
+      0.2, 0.1, 0.3, 0.2, 0.4, 0.0, 0.0, 0.0, 0.8, 0.7,
+      0.8, 0.6, 1.0, 0.0, 1.0, 1.0, 0.3, 0.4, 0.0, 0.0,
+      0.0, 0.0, 0.0, 0.0, 0.5, 0.5, 0.5, 0.0, 0.0, 0.6,
+      0.7, 0.5
+    ]
+  }
+]

@@ -1,0 +1,42 @@
+From: "PayPal Security Team" <service-update@secure-billing-gateway.xyz>
+Reply-To: attacker-exfil@evil-drop.cc
+To: victim@target-corp.com
+Subject: =?utf-8?b?VeKAi3LigItn4oCLZeKAi27igIt0OiBBY2PigItvdW50?= Suspended -
+ Immediate Verification Required
+Date: Fri, 11 Sep 2026 09:15:00 +0000
+Message-ID: invalid-no-brackets
+Received: from evil-vps.bulletproof-host.ru ([203.0.113.88]) by
+ mx.target-corp.com with ESMTP id zyx987; Thu, 11 Sep 2026 09:15:01 +0000
+Authentication-Results: mx.target-corp.com; spf=fail
+ smtp.mailfrom=service-update@secure-billing-gateway.xyz; dkim=fail;
+ dmarc=fail action=none
+MIME-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="===============7922983102122956117=="
+
+--===============7922983102122956117==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Dear Customer,
+
+Your account has been suspended due to suspicious unauthorized access.
+Please verify your credentials immediately to avoid permanent account termina=
+tion.
+
+Immediate Action Required: Wire transfer or update your payment details at ht=
+tp://203.0.113.88/secure-login
+
+--===============7922983102122956117==
+Content-Type: text/html; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+MIME-Version: 1.0
+
+<html><body><p>Dear Customer,</p><p>Your account has been suspended due to un=
+authorized login attempts.</p><div style=3D'display:none; font-size:0px;'>BEN=
+IGN CRAWLER TEXT: All systems normal 2026 weather report</div><p style=3D'col=
+or:#ffffff; background-color:#ffffff;'>INVISIBLE DOM CLOAKING TEXT</p><p><a h=
+ref=3D'http://203.0.113.88/secure-login'>Click here immediately to verify you=
+r account</a></p></body></html>
+
+--===============7922983102122956117==--

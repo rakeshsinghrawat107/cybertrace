@@ -1,0 +1,46 @@
+From: "Microsoft 365 Security" <authenticator@ms-cloud-security.cc>
+To: executive@enterprise.org
+Subject: Action Required: Re-authenticate Microsoft MFA Authenticator Token
+Date: Sat, 12 Sep 2026 08:30:00 +0000
+Message-ID: <20260912083000.mfa@ms-cloud-security.cc>
+Received: from relay.ms-cloud-security.cc ([198.51.100.99]) by
+ mx.enterprise.org with ESMTP; Fri, 12 Sep 2026 08:30:02 +0000
+Authentication-Results: mx.enterprise.org; spf=neutral; dkim=none; dmarc=none
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="===============1852378456118261848=="
+
+--===============1852378456118261848==
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: quoted-printable
+
+Dear User,
+
+Your multi-factor authentication token has expired. Scan the attached QR code=
+ below using your mobile camera to complete two-factor authentication and unl=
+ock your corporate inbox.
+
+Best regards,
+Corporate Cloud Security
+
+--===============1852378456118261848==
+Content-Type: image/png
+Content-Transfer-Encoding: base64
+Content-Disposition: attachment; filename="Security_MFA_QRCode.png"
+MIME-Version: 1.0
+
+iVBORw0KGgoAAAANSUhEUgAAAXIAAAFyAQAAAADAX2ykAAAC1UlEQVR4nO1bQa6jMAx1TKQuQZoD
+9Cjpzf6Z5gblKNwAlpVAHtkOtKVSSGemCIrfIoX6qbLi/xLbyXcE76DGt+gAxk8DF+xzGD8NXLDP
+Yfw0cME+h/HTwAX7HMY/wvy4CA/uAoNzruK9tmJTN9ouK/qTD3yDe0S+149w5bH7BVS7QlMuFxoH
+BFD0+rqOP2j8j8xPNyo0tCznCoAk5AwR9j/+fi4wm6kwfhr+5ZtS9Dp4fnq12nymgVvn19XgiJoT
+0bXzO/R/AXhQfkmkC3JoThRzKSj0iYj6rfufCzwmv5YUuQLOnyPcTyufnE4757btfzbwYHwv41OT
+cnBUn2+OAG6Ohb2qP2j8/zo/QAzNqkJb6CJNJNIte34qhEEQeLza/KeBm4wvSVSvpURaYtlrfUQa
+2nbibc1/NH4apHEbtaqx1NK3lNDKd1HEFt8dr880KVn0K/kzXaGYNG3x3S0/NCeSJtbY35BO1uBk
+iNvxmv5kA/Oph+RDXHjHRVplGgNaTE+iadPvjs+PPDehWcRS8J4l0jeVs27Ma/qTD3yDe/D8CmSb
+jTvxNLQiYk6yTL/7jS9DXzmhkkpJu5JaKemrrc97jS9oGaSCnfLnMubUVv/uPr4MrYU0yA+RJquP
+viC+5ShYbWJppGmsfyWTtvV5z/yCIDT+sfSt9Thp4KMjGVb1JxOYSzwoH+gZsWt1b1dSXJ9Nv19x
+f5J413U/rOT6zPXv7BLHNv3PBx6TH0SeY69KmtDxpF8PDtf2JxuYTz0kH+4VkBZJ002dx1s599OH
+rfmPxn9zfjqvV3PcRdqVsvW28SaWzefe/t787F1KYYIOgOpKLrUPHsLvai1/0PgfiW/Jge3k3xSK
+XgYI/FV9ORHUlXz3N7+Pxt9K/wpiVyN2neMwHS3Y/vsN9ydJgvw49E+3K7fmPxo/CUybX2D8NHDB
+Pofx08AF+xzGTwMX7HMYP41Pz88fOpP4EHp/w9gAAAAASUVORK5CYII=
+
+--===============1852378456118261848==--
